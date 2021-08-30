@@ -1,0 +1,124 @@
+.testimonial {
+  background-color: $blueGreen;
+  text-align: center;
+  color: $light;
+
+  &__carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 3.75rem 0;
+  }
+
+  &__slider {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__item {
+    @include breakpoint-up(large) {
+      padding: 0 9.375rem;
+    }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+
+    &::before {
+      @include breakpoint-up(large) {
+        opacity: 1;
+      }
+      content: '“';
+      position: absolute;
+      top: -1.875rem;
+      left: 1.875rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 900;
+      font-size: 12.125rem;
+      opacity: 0;
+    }
+
+    &::after {
+      @include breakpoint-up(large) {
+        opacity: 1;
+      }
+      content: '”';
+      position: absolute;
+      bottom: -1.875rem;
+      right: 1.875rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 900;
+      font-size: 12.125rem;
+      opacity: 0;
+    }
+  }
+
+  &__info {
+    text-align: left;
+    max-width: 48.75rem;
+
+    p {
+      font-size: $font-sm;
+      line-height: 1.7;
+    }
+  }
+
+  &__author {
+    width: 100%;
+    text-align: right;
+    h5 {
+      margin: 0.3125rem 0;
+    }
+    small {
+      font-style: italic;
+    }
+  }
+
+  &__controls {
+    .arrow {
+      @include breakpoint-up(large) {
+        opacity: 1;
+      }
+      position: absolute;
+      top: 30%;
+      cursor: pointer;
+      font-size: $font-lg;
+      opacity: 0;
+    }
+    .left {
+      left: 0;
+    }
+
+    .right {
+      right: 0;
+    }
+
+    ul {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translate(-50%);
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+
+      li {
+        width: 0.9375rem;
+        height: 0.9375rem;
+        border-radius: 50%;
+        margin: 0.625rem;
+        background-color: $light;
+        cursor: pointer;
+
+        &.selected {
+          background-color: $indicator;
+        }
+      }
+    }
+  }
+}

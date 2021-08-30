@@ -1,0 +1,53 @@
+.about {
+  &__item {
+    @include breakpoint-down(small) {
+      flex-direction: column-reverse;
+    }
+
+    display: flex;
+    align-items: center;
+    h1 {
+      margin-bottom: 1.5625rem;
+    }
+    image {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    flex: 1 1 50%;
+    &-reverse {
+      order: 2;
+    }
+  }
+
+  &__text {
+    p {
+      font-size: $font-xs;
+      color: $gray;
+      line-height: 1.7;
+      font-weight: 400;
+      margin-bottom: 1.5625rem;
+    }
+  }
+
+  &__cta {
+    color: $blueGreen;
+    text-decoration: underline;
+    font-size: $font-xs;
+  }
+
+  &__image {
+    @include breakpoint-up(large) {
+      min-height: 33.75rem;
+    }
+
+    flex: 1 1 50%;
+    background-image: url(/images/seal.jpg);
+    min-height: 18.75rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center center;
+  }
+}

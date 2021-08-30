@@ -1,0 +1,47 @@
+.footer {
+  background-color: $blueGreen;
+  text-align: center;
+  @include breakpoint-up(large) {
+    text-align: left;
+  }
+
+  &__content {
+    @include breakpoint-up(large) {
+      display: flex;
+    }
+    display: block;
+  }
+
+  &__logo {
+    @include breakpoint-up(large) {
+      margin-right: 20px;
+    }
+
+    img {
+      width: 11.875rem;
+      height: 2.5rem;
+    }
+
+    flex-basis: 20%;
+    padding-bottom: 2.5rem;
+  }
+
+  &__address {
+    @include breakpoint-down(medium) {
+      padding-bottom: 2.5rem;
+    }
+    flex-basis: 20%;
+    color: $light;
+  }
+
+  &__partner {
+    img {
+      width: 11.875rem;
+      height: 3.125rem;
+    }
+    @include breakpoint-up(large) {
+      text-align: right;
+    }
+    flex-basis: 60%;
+  }
+}

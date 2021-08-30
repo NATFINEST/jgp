@@ -1,0 +1,84 @@
+.hero {
+  @include breakpoint-up(medium) {
+    min-height: 25rem;
+  }
+
+  @include breakpoint-up(large) {
+    min-height: 37.5rem;
+    padding-top: 0;
+  }
+
+  position: relative;
+  background-image: url('/images/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: $light;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding-top: 3.125rem;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+  }
+
+  h1 {
+    margin-bottom: 0.625rem;
+    letter-spacing: 0.09375rem;
+  }
+
+  p {
+    @include breakpoint-up(medium) {
+      font-size: 1rem;
+    }
+
+    @include breakpoint-up(large) {
+      font-size: 1.125rem;
+      max-width: 70%;
+      margin: 0 auto;
+      margin-bottom: 1.5625rem;
+    }
+
+    font-size: $font-xs;
+    line-height: 1.7;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  &__cta {
+    font-size: $font-xs;
+    font-weight: 700;
+  }
+
+  &--v2 {
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+    }
+
+    @include breakpoint-up(large) {
+      min-height: 28.125rem;
+    }
+
+    background-image: url('/images/ocean.jpg');
+
+    &::after {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      max-width: 32.5rem;
+    }
+  }
+}
